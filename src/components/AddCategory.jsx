@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 
-export const AddCategory = () => {
+export const AddCategory = ({ onNewCategory }) => {
 
-  const [inputValue, setInputValue] = useState('one Punch');
+  const [inputValue, setInputValue] = useState('');
 
   const onInputChange = (e) => {  
     setInputValue(e.target.value);
   }
 
-  //se puede destructurar el evento
-  // const onInputChange = ({target}) => {    
-  //   setInputValue(target.value)
-  // }
+  //se puede destructurar el evento const onInputChange = ({target}) => { setInputValue(target.value)}
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
-
+    if( inputValue.trim().length <=1) return; 
+    onNewCategory(inputValue.trim());
+    setInputValue('');
   }
 
   return (
