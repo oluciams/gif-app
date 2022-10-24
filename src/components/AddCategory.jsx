@@ -6,9 +6,7 @@ export const AddCategory = ({ onNewCategory }) => {
 
   const onInputChange = (e) => {  
     setInputValue(e.target.value);
-  }
-
-  //se puede destructurar el evento const onInputChange = ({target}) => { setInputValue(target.value)}
+  } 
 
   const onSubmit = (event) => {
     event.preventDefault();
